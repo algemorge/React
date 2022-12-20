@@ -1,11 +1,11 @@
-import ExpenseItem from "./component/ExpenseItem";
+import Expenses from "./component/Expenses";
+
 function App() {
   // 일반적인 자바스크립트 = 명령적
   // const para = document.createElement('p');
   // para.textContent = 'This is also VISIBLE!';
   // document.getElementById('root').append(para);
 
-  // 여러개의 비용이 들어있는 배열
   const expenses = [
     {
       id: "e1",
@@ -31,26 +31,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      ></ExpenseItem>
+      <Expenses items={expenses} />
     </div>
   );
 }
@@ -64,4 +45,8 @@ export default App;
 // 컴포넌트를 재사용하는 법
 // 1. 매개변수 사용
 // 2. 리액트의 props 개념 사용
-// props : 속성을 추가해서 사용자 지정 컴포넌트에 데이터를 전달
+
+// props 
+// : 속성을 추가해서 사용자 지정 컴포넌트에 데이터를 전달
+// 동적인 props를 위해 값을 설정할 때 {}가 필요
+// title = "Toilet Paper" 처럼 고정된 값도 사용 가능
